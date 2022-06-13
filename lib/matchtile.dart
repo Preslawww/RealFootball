@@ -1,6 +1,4 @@
-
 import 'package:flutter/material.dart';
-import 'package:real_football/football_comments.dart';
 import 'soccermodel.dart';
 
 Widget matchTile(SoccerMatch match) {
@@ -39,17 +37,9 @@ Widget matchTile(SoccerMatch match) {
             ),
           ),
         ),
-        InkWell(
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => FootballComments(),
-            ),
-          ),
-          child: Image.network(
-            match.away.logoUrl,
-            width: 36.0,
-          ),
+        Image.network(
+          match.away.logoUrl,
+          width: 36.0,
         ),
         Expanded(
           child: Text(

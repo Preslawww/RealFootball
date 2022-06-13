@@ -7,6 +7,7 @@ Widget teamStat(String team, String logoUrl, String teamName) {
         Text(
           team,
           style: TextStyle(
+            color: Colors.white,
             fontSize: 18.0,
           ),
         ),
@@ -26,6 +27,7 @@ Widget teamStat(String team, String logoUrl, String teamName) {
           teamName,
           textAlign: TextAlign.center,
           style: TextStyle(
+            color: Colors.white,
             fontSize: 18.0,
           ),
         ),

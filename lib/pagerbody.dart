@@ -35,7 +35,7 @@ Widget PageBody(List<SoccerMatch> allmatches) {
         child: Container(
           width: double.infinity,
           decoration: BoxDecoration(
-            color: Color(0xFF4373D9),
+            color: Color.fromARGB(223, 3, 143, 8),
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(40.0),
               topRight: Radius.circular(40.0),

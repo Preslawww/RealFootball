@@ -15,6 +15,7 @@ Widget goalStat(int expandedTime, int homeGoal, int awayGoal) {
         Text(
           "${elapsed}'",
           style: TextStyle(
+            color: Colors.white,
             fontSize: 30.0,
           ),
         ),
@@ -24,6 +25,7 @@ Widget goalStat(int expandedTime, int homeGoal, int awayGoal) {
               "${home} - ${away}",
               textAlign: TextAlign.center,
               style: TextStyle(
+                color: Colors.white,
                 fontSize: 36.0,
               ),
             ),
