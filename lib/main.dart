@@ -96,11 +96,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:real_football/screens/main_screen.dart';
+import 'package:http_parser/http_parser.dart';
 
-void main() {
+void main() async {
+  // WidgetsFlutterBinding.ensureInitialized();
+  //var Firebase;
+  //await Firebase.initializeApp();
   runApp(MyApp());
-  debugShowCheckedModeBanner:
-  false;
 }
 
 class MyApp extends StatelessWidget {

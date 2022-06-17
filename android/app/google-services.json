@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "803094939339",
+    "project_id": "realfootballnnews",
+    "storage_bucket": "realfootballnnews.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:803094939339:android:0c6d410c195f4c30dd3d4e",
+        "android_client_info": {
+          "package_name": "com.example.real_football"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "803094939339-ek96r38vsbpk2rvl692fde4m7sdfin2e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCw9WpQFwBVUGVkS2dE7YL3pYSpULpEieU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "803094939339-ek96r38vsbpk2rvl692fde4m7sdfin2e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

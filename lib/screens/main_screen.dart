@@ -1,10 +1,13 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:real_football/bloc/bottom_navbar_bloc.dart';
+import 'package:real_football/screens/LeagueScreen.dart';
 import 'package:real_football/screens/about_us.dart';
+import 'package:real_football/screens/signin_screen.dart';
 import 'package:real_football/screens/tabs/matches.dart';
 import 'package:real_football/style/theme.dart' as Style;
 
+import 'home_screen.dart';
 import 'tabs/home_screen.dart';
 import 'tabs/search_screen.dart';
 import 'tabs/sources_screen.dart';
@@ -31,7 +34,7 @@ class _MainScreenState extends State<MainScreen> {
         child: AppBar(
           backgroundColor: Style.Colors.mainColor,
           title: Text(
-            "LevelUp",
+            "RealFootball",
             style: TextStyle(color: Colors.white),
           ),
           actions: [
@@ -61,6 +64,10 @@ class _MainScreenState extends State<MainScreen> {
                 return SearchScreen();
               case NavBarItem.MATCHES:
                 return SoccerApp();
+              case NavBarItem.PROFILE:
+                return SignInScreen();
+              case NavBarItem.LEAGUES:
+                return LeagueScreen();
                 // TODO: Handle this case.
                 break;
             }
@@ -112,8 +119,18 @@ class _MainScreenState extends State<MainScreen> {
                   ),
                   BottomNavigationBarItem(
                     label: "Matches",
-                    icon: Icon(EvaIcons.searchOutline),
-                    activeIcon: Icon(EvaIcons.search),
+                    icon: Icon(EvaIcons.refreshOutline),
+                    activeIcon: Icon(EvaIcons.refreshOutline),
+                  ),
+                  BottomNavigationBarItem(
+                    label: "Profile",
+                    icon: Icon(EvaIcons.logInOutline),
+                    activeIcon: Icon(EvaIcons.logInOutline),
+                  ),
+                  BottomNavigationBarItem(
+                    label: "Leagues",
+                    icon: Icon(EvaIcons.arrowCircleDownOutline),
+                    activeIcon: Icon(EvaIcons.arrowCircleDownOutline),
                   ),
                 ],
               ),

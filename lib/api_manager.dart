@@ -13,7 +13,7 @@ class SoccerApi {
   };
 
   Future<List<SoccerMatch>> getAllMatches() async {
-    Response res = await get(apiUrl, headers: headers);
+    Response res = await get(Uri.parse(apiUrl), headers: headers);
     var body;
 
     if (res.statusCode == 200) {
