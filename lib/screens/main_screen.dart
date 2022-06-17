@@ -81,15 +81,15 @@ class _MainScreenState extends State<MainScreen> {
           return Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(30), topLeft: Radius.circular(30)),
+                  topRight: Radius.circular(10), topLeft: Radius.circular(10)),
               boxShadow: [
                 BoxShadow(color: Colors.grey, spreadRadius: 0, blurRadius: 10),
               ],
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(30.0),
-                topRight: Radius.circular(30.0),
+                topLeft: Radius.circular(0.0),
+                topRight: Radius.circular(0.0),
               ),
               child: BottomNavigationBar(
                 backgroundColor: Style.Colors.BottomNavbackground_,

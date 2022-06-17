@@ -94,14 +94,14 @@
 // you can get as many data as many matches are curetly playing
 //Now let's try to get data by seasons and leagues
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:real_football/screens/main_screen.dart';
 import 'package:http_parser/http_parser.dart';
 
 void main() async {
-  // WidgetsFlutterBinding.ensureInitialized();
-  //var Firebase;
-  //await Firebase.initializeApp();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 

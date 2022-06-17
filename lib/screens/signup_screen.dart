@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:real_football/reusable_widget/reusable_widget.dart';
 
@@ -37,7 +38,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
           child: SingleChildScrollView(
               child: Padding(
-                  padding: EdgeInsets.fromLTRB(20, 120, 20, 0),
+                  padding: EdgeInsets.fromLTRB(20, 200, 20, 400),
                   child: Column(children: <Widget>[
                     const SizedBox(
                       height: 20,
@@ -47,18 +48,30 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     const SizedBox(
                       height: 20,
                     ),
-                    reusableTextField("Enter UserName", Icons.person_outline,
+                    reusableTextField("Enter Email", Icons.person_outline,
                         false, _emailTextController),
                     const SizedBox(
                       height: 20,
                     ),
-                    reusableTextField("Enter UserName", Icons.person_outline,
-                        false, _emailTextController),
+                    reusableTextField("Enter Password", Icons.lock_outline,
+                        true, _passwordTextController),
+                    const SizedBox(
+                      height: 20,
+                    ),
                     signInSignUpButton(context, false, () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ProfileScreen()));
+                      FirebaseAuth.instance
+                          .createUserWithEmailAndPassword(
+                              email: _emailTextController.text,
+                              password: _passwordTextController.text)
+                          .then((value) {
+                        print("Created new Account");
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ProfileScreen()));
+                      }).onError((error, stackTrace) {
+                        print("Error ${error.toString()}");
+                      });
                     })
                   ])))),
     );
