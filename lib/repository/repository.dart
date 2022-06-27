@@ -6,7 +6,7 @@ import 'package:real_football/model/source_response.dart';
 
 class NewsRepository {
   static String mainUrl = "https://newsapi.org/v2/";
-  final String apiKey = "dd993f33f00d48b29be445241926e9d5";
+  final String apiKey = "9ab322ce478b4ae884a24108fe3e9524";
 
   final Dio _dio = Dio();
 

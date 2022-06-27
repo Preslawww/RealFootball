@@ -18,7 +18,7 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   void initState() {
     super.initState();
-    searchBloc..search("tesla");
+    searchBloc..search("Ronaldo");
   }
 
   @override
@@ -30,7 +30,7 @@ class _SearchScreenState extends State<SearchScreen> {
               left: 10.0, right: 10.0, top: 10.0, bottom: 10.0),
           child: TextFormField(
             autovalidateMode: AutovalidateMode.always,
-            style: TextStyle(fontSize: 14.0, color: Colors.black),
+            style: TextStyle(fontSize: 14.0, color: Colors.white),
             controller: _searchController,
             onChanged: (changed) {
               searchBloc..search(_searchController.text);
@@ -38,12 +38,12 @@ class _SearchScreenState extends State<SearchScreen> {
             decoration: InputDecoration(
               floatingLabelBehavior: FloatingLabelBehavior.never,
               filled: true,
-              fillColor: Colors.grey[100],
+              fillColor: Colors.grey[850],
               suffixIcon: _searchController.text.length > 0
                   ? IconButton(
                       icon: Icon(
                         EvaIcons.backspaceOutline,
-                        color: Colors.grey[500],
+                        color: Colors.white,
                         size: 16.0,
                       ),
                       onPressed: () {
@@ -51,7 +51,7 @@ class _SearchScreenState extends State<SearchScreen> {
                           FocusScope.of(context).requestFocus(FocusNode());
                           _searchController.clear();
                           if (_searchController.text == "") {
-                            searchBloc..search('tesla');
+                            searchBloc..search('Ronaldo');
                           } else {
                             searchBloc..search(_searchController.text);
                           }
@@ -59,7 +59,7 @@ class _SearchScreenState extends State<SearchScreen> {
                       })
                   : Icon(
                       EvaIcons.searchOutline,
-                      color: Colors.grey[500],
+                      color: Colors.white,
                       size: 16.0,
                     ),
               enabledBorder: OutlineInputBorder(
@@ -76,7 +76,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   fontWeight: FontWeight.w500),
               labelStyle: TextStyle(
                   fontSize: 14.0,
-                  color: Colors.grey,
+                  color: Colors.white,
                   fontWeight: FontWeight.w500),
             ),
             autocorrect: false,
@@ -138,7 +138,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   border: Border(
                     top: BorderSide(color: Colors.grey, width: 1.0),
                   ),
-                  color: Colors.white,
+                  color: Style.Colors.mainColor,
                 ),
                 height: 150,
                 child: Row(
@@ -155,7 +155,7 @@ class _SearchScreenState extends State<SearchScreen> {
                               maxLines: 3,
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.black,
+                                  color: Colors.white,
                                   fontSize: 14.0)),
                           Expanded(
                               child: Align(
@@ -169,7 +169,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                         timeUntil(DateTime.parse(
                                             articles[index].date)),
                                         style: TextStyle(
-                                            color: Colors.black26,
+                                            color: Colors.white,
                                             fontWeight: FontWeight.bold,
                                             fontSize: 10.0))
                                   ],

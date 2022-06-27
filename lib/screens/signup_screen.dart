@@ -1,10 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:real_football/responsive/mobile_screen_layout.dart';
 import 'package:real_football/reusable_widget/reusable_widget.dart';
 
 import '../reusable_widget.dart/reusable_widget.dart';
 import '../utils/color_utils.dart';
 import 'home_screen.dart';
+import 'main_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
   SignUpScreen({Key? key}) : super(key: key);
@@ -58,7 +60,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     const SizedBox(
                       height: 20,
                     ),
-                    signInSignUpButton(context, false, () {
+                    firebaseButton(context, "Sign Up", () {
                       FirebaseAuth.instance
                           .createUserWithEmailAndPassword(
                               email: _emailTextController.text,
@@ -68,7 +70,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => ProfileScreen()));
+                                builder: (context) => MainScreen()));
                       }).onError((error, stackTrace) {
                         print("Error ${error.toString()}");
                       });

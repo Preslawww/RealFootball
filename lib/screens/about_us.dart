@@ -9,72 +9,27 @@ class AboutUs extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Style.Colors.background,
         appBar: AppBar(
+          centerTitle: true,
           backgroundColor: Style.Colors.background,
-          title: const Text('About Us'),
+          title: const Text('About the Developer'),
         ),
         body: ListView(
           padding: const EdgeInsets.all(8),
           children: <Widget>[
             ListTile(
               title: Text(
-                "Ebisa Kebede",
-                style: TextStyle(color: Colors.white, fontSize: 20),
+                "Preslav Donchev",
+                style: TextStyle(
+                    color: const Color.fromARGB(255, 49, 217, 7), fontSize: 20),
               ),
               subtitle: Text(
-                "15026/20",
+                "Another football enthusiast and flutter rookie. Feel free to contact me at preslaw.donchev@gmail.com for collaboration.",
                 style: TextStyle(color: Colors.white, fontSize: 15),
               ),
               leading: CircleAvatar(
-                  backgroundImage: AssetImage("assets/img/ebba1.jpg")),
+                  backgroundImage: AssetImage(
+                      "assets/img/74af635895f2ad5937e6db1426ca11ca.png")),
             ),
-            ListTile(
-              title: Text(
-                "Kalkidan Alemu",
-                style: TextStyle(color: Colors.white, fontSize: 20),
-              ),
-              subtitle: Text(
-                "14849/20",
-                style: TextStyle(color: Colors.white, fontSize: 15),
-              ),
-              leading: CircleAvatar(
-                  backgroundImage: AssetImage("assets/img/kal.jpg")),
-            ),
-            ListTile(
-              title: Text(
-                "Natnael Bayisa",
-                style: TextStyle(color: Colors.white, fontSize: 20),
-              ),
-              subtitle: Text(
-                "14629/20",
-                style: TextStyle(color: Colors.white, fontSize: 15),
-              ),
-              leading: CircleAvatar(
-                  backgroundImage: AssetImage("assets/img/nati.jpg")),
-            ),
-            ListTile(
-              title: Text(
-                "Faruq Ismael",
-                style: TextStyle(color: Colors.white, fontSize: 20),
-              ),
-              subtitle: Text(
-                "14819/20",
-                style: TextStyle(color: Colors.white, fontSize: 15),
-              ),
-              leading: CircleAvatar(
-                  backgroundImage: AssetImage("assets/img/faruq.jpg")),
-            ),
-            ListTile(
-              title: Text(
-                "Mikiyas Tilahun",
-                style: TextStyle(color: Colors.white, fontSize: 20),
-              ),
-              subtitle: Text(
-                "14657/20",
-                style: TextStyle(color: Colors.white, fontSize: 15),
-              ),
-              leading: CircleAvatar(
-                  backgroundImage: AssetImage("assets/img/faruq.jpg")),
-            )
           ],
         ),
       ),

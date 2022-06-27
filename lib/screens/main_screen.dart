@@ -1,10 +1,15 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
 import 'package:real_football/bloc/bottom_navbar_bloc.dart';
 import 'package:real_football/screens/LeagueScreen.dart';
 import 'package:real_football/screens/about_us.dart';
+import 'package:real_football/screens/add_post_screen.dart';
+import 'package:real_football/screens/feed_screen.dart';
 import 'package:real_football/screens/signin_screen.dart';
 import 'package:real_football/screens/tabs/matches.dart';
+import 'package:real_football/screens/tabs/profile_screen.dart';
 import 'package:real_football/style/theme.dart' as Style;
 
 import 'home_screen.dart';
@@ -32,12 +37,45 @@ class _MainScreenState extends State<MainScreen> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(50.0),
         child: AppBar(
+          centerTitle: true,
           backgroundColor: Style.Colors.mainColor,
+          leading: Row(
+            children: [
+              IconButton(
+                icon: Icon(Icons.person),
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                        builder: (context) => ProfileScreen(
+                              uid: FirebaseAuth.instance.currentUser!.uid,
+                            )),
+                  );
+                },
+              ),
+            ],
+          ),
           title: Text(
-            "RealFootball",
+            "RFN",
             style: TextStyle(color: Colors.white),
+            textAlign: TextAlign.left,
           ),
           actions: [
+            IconButton(
+              icon: Icon(Icons.dashboard_outlined),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => FeedScreen()),
+                );
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.table_chart_outlined),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => LeagueScreen()),
+                );
+              },
+            ),
             IconButton(
               icon: Icon(Icons.info),
               onPressed: () {
@@ -64,10 +102,9 @@ class _MainScreenState extends State<MainScreen> {
                 return SearchScreen();
               case NavBarItem.MATCHES:
                 return SoccerApp();
-              case NavBarItem.PROFILE:
-                return SignInScreen();
-              case NavBarItem.LEAGUES:
-                return LeagueScreen();
+              case NavBarItem.POST:
+                return AddPostScreen();
+
                 // TODO: Handle this case.
                 break;
             }
@@ -94,11 +131,11 @@ class _MainScreenState extends State<MainScreen> {
               child: BottomNavigationBar(
                 backgroundColor: Style.Colors.BottomNavbackground_,
                 iconSize: 20,
-                unselectedItemColor: Style.Colors.grey,
+                unselectedItemColor: Style.Colors.titleColor,
                 unselectedFontSize: 8.5,
                 selectedFontSize: 8.5,
                 type: BottomNavigationBarType.fixed,
-                fixedColor: Style.Colors.titleColor,
+                fixedColor: Style.Colors.grey,
                 currentIndex: snapshot.data!.index,
                 onTap: _bottomNavBarBloc.pickItem,
                 items: [
@@ -119,18 +156,13 @@ class _MainScreenState extends State<MainScreen> {
                   ),
                   BottomNavigationBarItem(
                     label: "Matches",
-                    icon: Icon(EvaIcons.refreshOutline),
-                    activeIcon: Icon(EvaIcons.refreshOutline),
+                    icon: Icon(Icons.sports_soccer_outlined),
+                    activeIcon: Icon(EvaIcons.globe),
                   ),
                   BottomNavigationBarItem(
-                    label: "Profile",
-                    icon: Icon(EvaIcons.logInOutline),
-                    activeIcon: Icon(EvaIcons.logInOutline),
-                  ),
-                  BottomNavigationBarItem(
-                    label: "Leagues",
-                    icon: Icon(EvaIcons.arrowCircleDownOutline),
-                    activeIcon: Icon(EvaIcons.arrowCircleDownOutline),
+                    label: "Post",
+                    icon: Icon(EvaIcons.plusCircleOutline),
+                    activeIcon: Icon(EvaIcons.plusCircle),
                   ),
                 ],
               ),
